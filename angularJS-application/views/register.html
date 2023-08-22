@@ -1,0 +1,16 @@
+<!-- register.html -->
+
+<div class="registration-form">
+    <h1>Register</h1>
+    <form name="registrationForm" ng-submit="register()" novalidate>
+        <label>Username:</label>
+        <input type="text" ng-model="user.username" required>
+
+        <label>Password:</label>
+        <input type="password" ng-model="user.password" ng-minlength="6" required>
+        <span ng-show="registrationForm.password.$error.required && registrationForm.password.$dirty">Password is required.</span>
+        <span ng-show="registrationForm.password.$error.minlength && registrationForm.password.$dirty">Password must be at least 6 characters long.</span>
+
+        <button type="submit" ng-disabled="registrationForm.$invalid">Register</button>
+    </form>
+</div>
